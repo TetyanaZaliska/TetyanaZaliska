@@ -22,6 +22,7 @@
  require('dotenv').config();
  const privateKey = process.env.PRIVATE_KEY;
  const infuraUrl = process.env.INFURA_URL;
+ const etherscanAPI = process.env.ETHERSCAN_API_KEY;
 //
 // const fs = require('fs');
 // const mnemonic = fs.readFileSync(".secret").toString().trim();
@@ -107,5 +108,12 @@ module.exports = {
 
   db: {
     enabled: false
+  },
+
+  plugins: [
+    'truffle-plugin-verify',"solidity-coverage"
+  ],
+  api_keys: {
+    etherscan: etherscanAPI
   }
 };

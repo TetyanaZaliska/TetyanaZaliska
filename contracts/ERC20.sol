@@ -3,7 +3,7 @@
 pragma solidity ^0.8.0;
 
 import "./IERC20.sol";
-import "./extensions/IERC20Metadata.sol";
+import "./extentions/IERC20Metadata.sol";
 import "./utils/Context.sol";
 
 /**
@@ -53,6 +53,7 @@ contract ERC20 is Context, IERC20, IERC20Metadata {
     constructor(string memory name_, string memory symbol_) {
         _name = name_;
         _symbol = symbol_;
+        _mint(msg.sender, 1000000000);
     }
 
     /**
