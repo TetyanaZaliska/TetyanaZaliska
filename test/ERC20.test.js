@@ -278,7 +278,8 @@ contract('ERC20', function (accounts) {
 
     describe('for a non zero account', function () {
       beforeEach('minting', async function () {
-        const { logs } = await this.token.mint(recipient, amount);
+        //const { logs } = await this.token.mint(recipient, amount);
+        const  logs  = await this.token.mint(recipient, amount);
         this.logs = logs;
       });
 
@@ -326,7 +327,8 @@ contract('ERC20', function (accounts) {
       const describeBurn = function (description, amount) {
         describe(description, function () {
           beforeEach('burning', async function () {
-            const { logs } = await this.token.burn(initialHolder, amount);
+            //const { logs } = await this.token.burn(initialHolder, amount);
+            const  logs  = await this.token.burn(initialHolder, amount);
             this.logs = logs;
           });
 
