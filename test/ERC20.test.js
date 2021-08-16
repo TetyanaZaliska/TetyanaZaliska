@@ -1,26 +1,63 @@
-const { BN, constants, expectEvent, expectRevert } = require('@openzeppelin/test-helpers');
-const { expect } = require('chai');
-const { ZERO_ADDRESS } = constants;
+const web3 = require('web3');
+//const globweb3 = new Web3(web3.givenProvider || "http://localhost:8545");
+const truffleAssert = require('truffle-assertions');
+const BN = web3.utils.BN;
+const chaiBN = require('chai-bn')(BN);
 
+require('chai').use(chaiBN);
+
+// Installing chai-bn for the user is part of the offering.
+//
+// The chai module used internally by us may not be the same one that the user
+// has in their own tests. This can happen if the version ranges required don't
+// intersect, or if the package manager doesn't dedupe the modules for any
+// other reason. We do our best to install chai-bn for the user.
+for (const mod of [require.main, module.parent]) {
+  try {
+    mod.require('chai').use(chaiBN);
+  } catch (e) {
+    // Ignore errors
+  }
+} 
+
+const ZERO_ADDRESS = '0x0000000000000000000000000000000000000000';
+ 
+const { expect } = require('chai');
+
+/*
+const {expectEvent, expectRevert} = module.exports = { 
+  get expectEvent () { return require('./expectEvent'); }, 
+  get expectRevert () { return require('./expectRevert'); }, 
+};*/
+
+
+//const { expectEvent } = require('./expectEvent'); 
+//const { expectRevert } = require('./expectRevert'); 
+
+
+//const { expectEvent } = module.exports.expectEvent; 
+//const { expectRevert } = module.exports.expectRevert; 
+ 
 const {
   shouldBehaveLikeERC20,
   shouldBehaveLikeERC20Transfer,
   shouldBehaveLikeERC20Approve,
 } = require('./ERC20.behavior');
 
-const ERC20Mock = artifacts.require('ERC20Mock');
-const ERC20DecimalsMock = artifacts.require('ERC20DecimalsMock');
+const TZTokens = artifacts.require('TZTokens');
+//const ERC20DecimalsMock = artifacts.require('ERC20DecimalsMock');
 
 contract('ERC20', function (accounts) {
   const [ initialHolder, recipient, anotherAccount ] = accounts;
 
-  const name = 'My Token';
-  const symbol = 'MTKN';
+  const name = 'TZTokens';
+  const symbol = 'TZT';
 
-  const initialSupply = new BN(100);
+  const initialSupply = new BN(1000000000);
 
   beforeEach(async function () {
-    this.token = await ERC20Mock.new(name, symbol, initialHolder, initialSupply);
+    //this.token = await TZTokens.new(name, symbol, initialHolder, initialSupply);
+    this.token = await TZTokens.new();
   });
 
   it('has a name', async function () {
@@ -31,18 +68,10 @@ contract('ERC20', function (accounts) {
     expect(await this.token.symbol()).to.equal(symbol);
   });
 
-  it('has 18 decimals', async function () {
-    expect(await this.token.decimals()).to.be.bignumber.equal('18');
+  it('has 6 decimals', async function () {
+    expect(await this.token.decimals()).to.be.bignumber.equal('6');
   });
-
-  describe('set decimals', function () {
-    const decimals = new BN(6);
-
-    it('can set decimals during construction', async function () {
-      const token = await ERC20DecimalsMock.new(name, symbol, decimals);
-      expect(await token.decimals()).to.be.bignumber.equal(decimals);
-    });
-  });
+ 
 
   shouldBehaveLikeERC20('ERC20', initialSupply, initialHolder, recipient, anotherAccount);
 
@@ -53,9 +82,12 @@ contract('ERC20', function (accounts) {
       function shouldDecreaseApproval (amount) {
         describe('when there was no approved amount before', function () {
           it('reverts', async function () {
-            await expectRevert(this.token.decreaseAllowance(
+            await truffleAssert.reverts(this.token.decreaseAllowance(
               spender, amount, { from: initialHolder }), 'ERC20: decreased allowance below zero',
             );
+            /*await expectRevert(this.token.decreaseAllowance(
+              spender, amount, { from: initialHolder }), 'ERC20: decreased allowance below zero',
+            );*/
           });
         });
 
@@ -67,13 +99,19 @@ contract('ERC20', function (accounts) {
           });
 
           it('emits an approval event', async function () {
-            const { logs } = await this.token.decreaseAllowance(spender, approvedAmount, { from: initialHolder });
+            //const { logs } = await this.token.decreaseAllowance(spender, approvedAmount, { from: initialHolder });
+            const  logs  = await this.token.decreaseAllowance(spender, approvedAmount, { from: initialHolder });
 
-            expectEvent.inLogs(logs, 'Approval', {
+            truffleAssert.eventEmitted(logs, 'Approval', {
               owner: initialHolder,
               spender: spender,
               value: new BN(0),
-            });
+            });  
+            /*expectEvent.inLogs(logs, 'Approval', {
+              owner: initialHolder,
+              spender: spender,
+              value: new BN(0),
+            });*/
           });
 
           it('decreases the spender allowance subtracting the requested amount', async function () {
@@ -88,10 +126,14 @@ contract('ERC20', function (accounts) {
           });
 
           it('reverts when more than the full allowance is removed', async function () {
-            await expectRevert(
+            await truffleAssert.reverts(
               this.token.decreaseAllowance(spender, approvedAmount.addn(1), { from: initialHolder }),
               'ERC20: decreased allowance below zero',
             );
+            /*await expectRevert(
+              this.token.decreaseAllowance(spender, approvedAmount.addn(1), { from: initialHolder }),
+              'ERC20: decreased allowance below zero',
+            );*/
           });
         });
       }
@@ -114,9 +156,12 @@ contract('ERC20', function (accounts) {
       const spender = ZERO_ADDRESS;
 
       it('reverts', async function () {
-        await expectRevert(this.token.decreaseAllowance(
+        await truffleAssert.reverts(this.token.decreaseAllowance(
           spender, amount, { from: initialHolder }), 'ERC20: decreased allowance below zero',
         );
+        /*await expectRevert(this.token.decreaseAllowance(
+          spender, amount, { from: initialHolder }), 'ERC20: decreased allowance below zero',
+        );*/
       });
     });
   });
@@ -129,13 +174,19 @@ contract('ERC20', function (accounts) {
 
       describe('when the sender has enough balance', function () {
         it('emits an approval event', async function () {
-          const { logs } = await this.token.increaseAllowance(spender, amount, { from: initialHolder });
+          //const { logs } = await this.token.increaseAllowance(spender, amount, { from: initialHolder });
+          const  logs  = await this.token.increaseAllowance(spender, amount, { from: initialHolder });
 
-          expectEvent.inLogs(logs, 'Approval', {
+          truffleAssert.eventEmitted(logs, 'Approval', {
             owner: initialHolder,
             spender: spender,
             value: amount,
-          });
+          });  
+          /*expectEvent.inLogs(logs, 'Approval', {
+            owner: initialHolder,
+            spender: spender,
+            value: amount,
+          });*/
         });
 
         describe('when there was no approved amount before', function () {
@@ -163,13 +214,19 @@ contract('ERC20', function (accounts) {
         const amount = initialSupply.addn(1);
 
         it('emits an approval event', async function () {
-          const { logs } = await this.token.increaseAllowance(spender, amount, { from: initialHolder });
+          //const { logs } = await this.token.increaseAllowance(spender, amount, { from: initialHolder });
+          const  logs  = await this.token.increaseAllowance(spender, amount, { from: initialHolder });
 
-          expectEvent.inLogs(logs, 'Approval', {
+          truffleAssert.eventEmitted(logs, 'Approval', {
             owner: initialHolder,
             spender: spender,
             value: amount,
-          });
+          });  
+          /*expectEvent.inLogs(logs, 'Approval', {
+            owner: initialHolder,
+            spender: spender,
+            value: amount,
+          });*/
         });
 
         describe('when there was no approved amount before', function () {
@@ -198,9 +255,12 @@ contract('ERC20', function (accounts) {
       const spender = ZERO_ADDRESS;
 
       it('reverts', async function () {
-        await expectRevert(
+        await truffleAssert.reverts(
           this.token.increaseAllowance(spender, amount, { from: initialHolder }), 'ERC20: approve to the zero address',
         );
+        /*await expectRevert(
+          this.token.increaseAllowance(spender, amount, { from: initialHolder }), 'ERC20: approve to the zero address',
+        );*/
       });
     });
   });
@@ -208,9 +268,12 @@ contract('ERC20', function (accounts) {
   describe('_mint', function () {
     const amount = new BN(50);
     it('rejects a null account', async function () {
-      await expectRevert(
+      await truffleAssert.reverts(
         this.token.mint(ZERO_ADDRESS, amount), 'ERC20: mint to the zero address',
       );
+      /*await expectRevert(
+        this.token.mint(ZERO_ADDRESS, amount), 'ERC20: mint to the zero address',
+      );*/
     });
 
     describe('for a non zero account', function () {
@@ -229,10 +292,13 @@ contract('ERC20', function (accounts) {
       });
 
       it('emits Transfer event', async function () {
-        const event = expectEvent.inLogs(this.logs, 'Transfer', {
+        const event = truffleAssert.eventEmitted(this.logs, 'Transfer', {
           from: ZERO_ADDRESS,
           to: recipient,
-        });
+        });  /*expectEvent.inLogs(this.logs, 'Transfer', {
+          from: ZERO_ADDRESS,
+          to: recipient,
+        });*/
 
         expect(event.args.value).to.be.bignumber.equal(amount);
       });
@@ -241,15 +307,20 @@ contract('ERC20', function (accounts) {
 
   describe('_burn', function () {
     it('rejects a null account', async function () {
-      await expectRevert(this.token.burn(ZERO_ADDRESS, new BN(1)),
-        'ERC20: burn from the zero address');
+      await truffleAssert.reverts(this.token.burn(ZERO_ADDRESS, new BN(1)),
+      'ERC20: burn from the zero address');
+      /* await expectRevert(this.token.burn(ZERO_ADDRESS, new BN(1)),
+        'ERC20: burn from the zero address');*/
     });
 
     describe('for a non zero account', function () {
       it('rejects burning more than balance', async function () {
-        await expectRevert(this.token.burn(
+        await truffleAssert.reverts(this.token.burn(
           initialHolder, initialSupply.addn(1)), 'ERC20: burn amount exceeds balance',
         );
+        /*await expectRevert(this.token.burn(
+          initialHolder, initialSupply.addn(1)), 'ERC20: burn amount exceeds balance',
+        );*/
       });
 
       const describeBurn = function (description, amount) {
@@ -270,10 +341,13 @@ contract('ERC20', function (accounts) {
           });
 
           it('emits Transfer event', async function () {
-            const event = expectEvent.inLogs(this.logs, 'Transfer', {
+            const event = truffleAssert.eventEmitted(this.logs, 'Transfer', {
               from: initialHolder,
               to: ZERO_ADDRESS,
-            });
+            });/*expectEvent.inLogs(this.logs, 'Transfer', {
+              from: initialHolder,
+              to: ZERO_ADDRESS,
+            });*/
 
             expect(event.args.value).to.be.bignumber.equal(amount);
           });
@@ -292,9 +366,12 @@ contract('ERC20', function (accounts) {
 
     describe('when the sender is the zero address', function () {
       it('reverts', async function () {
-        await expectRevert(this.token.transferInternal(ZERO_ADDRESS, recipient, initialSupply),
+        await truffleAssert.reverts(this.token.transferInternal(ZERO_ADDRESS, recipient, initialSupply),
+        'ERC20: transfer from the zero address',
+      );
+        /*await expectRevert(this.token.transferInternal(ZERO_ADDRESS, recipient, initialSupply),
           'ERC20: transfer from the zero address',
-        );
+        );*/
       });
     });
   });
@@ -306,9 +383,12 @@ contract('ERC20', function (accounts) {
 
     describe('when the owner is the zero address', function () {
       it('reverts', async function () {
-        await expectRevert(this.token.approveInternal(ZERO_ADDRESS, recipient, initialSupply),
+        await truffleAssert.reverts(this.token.approveInternal(ZERO_ADDRESS, recipient, initialSupply),
+        'ERC20: approve from the zero address',
+      );
+        /*await expectRevert(this.token.approveInternal(ZERO_ADDRESS, recipient, initialSupply),
           'ERC20: approve from the zero address',
-        );
+        );*/
       });
     });
   });

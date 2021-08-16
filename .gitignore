@@ -1,5 +1,11 @@
 node_modules/
 build/
+coverage/
 coverage.json
 .env
 .vscode
+node_modules
+
+#Hardhat files
+cache
+artifacts

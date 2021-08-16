@@ -1,0 +1,1432 @@
+{
+  "contractName": "Context",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "c__0xdb6a53a0",
+          "type": "bytes32"
+        }
+      ],
+      "name": "c_0xdb6a53a0",
+      "outputs": [],
+      "stateMutability": "pure",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.8.0+commit.c7dfd78e\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"c__0xdb6a53a0\",\"type\":\"bytes32\"}],\"name\":\"c_0xdb6a53a0\",\"outputs\":[],\"stateMutability\":\"pure\",\"type\":\"function\"}],\"devdoc\":{\"details\":\"Provides information about the current execution context, including the sender of the transaction and its data. While these are generally available via msg.sender and msg.data, they should not be accessed in such a direct manner, since when dealing with meta-transactions the account sending and paying for execution may not be the actual sender (as far as an application is concerned). This contract is only required for intermediate, library-like contracts.\",\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/.coverage_contracts/utils/Context.sol\":\"Context\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/.coverage_contracts/utils/Context.sol\":{\"keccak256\":\"0xbfca2c6cd91d5f105aa063f901d6cfd57ef3d316e8924b53a0f44e13fab5a7ee\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://592bf82f3b6e598a9e6b714a586b378c51ef5d6a0747b829e76ad967da339a8e\",\"dweb:/ipfs/QmetWK1pa9KyRMGSqpoj1giXFiPmuNpG4aaZyQmRbh2w1h\"]}},\"version\":1}",
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "immutableReferences": {},
+  "generatedSources": [],
+  "deployedGeneratedSources": [],
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "// SPDX-License-Identifier: MIT\r\n\r\npragma solidity ^0.8.0;\nfunction c_0x1c05fbb8(bytes32 c__0x1c05fbb8) pure {}\n\r\n\r\n/**\r\n * @dev Provides information about the current execution context, including the\r\n * sender of the transaction and its data. While these are generally available\r\n * via msg.sender and msg.data, they should not be accessed in such a direct\r\n * manner, since when dealing with meta-transactions the account sending and\r\n * paying for execution may not be the actual sender (as far as an application\r\n * is concerned).\r\n *\r\n * This contract is only required for intermediate, library-like contracts.\r\n */\r\nabstract contract Context {\nfunction c_0xdb6a53a0(bytes32 c__0xdb6a53a0) public pure {}\n\r\n    function _msgSender() internal view virtual returns (address) {c_0xdb6a53a0(0x84ebd30c151ba60f75d0a0e1e85497fe2fac19c16c4ce1d7ca7bff68cf9868c6); /* function */ \n\r\nc_0xdb6a53a0(0xe5d013de05efc9a40493e777a8cfceac534f4d6c092b82412cfa53f6f03ff19f); /* line */ \n        c_0xdb6a53a0(0x7cbaab816980b7d0550e0efe1c6796593168c6515fa42551ab4566be00e5b0f4); /* statement */ \nreturn msg.sender;\r\n    }\r\n\r\n    function _msgData() internal view virtual returns (bytes calldata) {c_0xdb6a53a0(0xa882741634e47571d34d4b66d3175b9e80906b069ca07677d6d714354e341d7a); /* function */ \n\r\nc_0xdb6a53a0(0x8c52ad261d44ca682e36d83ec3c9bb83b7d2cbf1d45a178e7a815845a32864f4); /* line */ \n        c_0xdb6a53a0(0x8178f72dc3babdd306da17b081b4ae6b73554eddb3585e8bd78b77efebd8fe35); /* statement */ \nreturn msg.data;\r\n    }\r\n}\r\n",
+  "sourcePath": "C:\\Users\\Dima\\Desktop\\solidity\\contracts\\.coverage_contracts\\utils\\Context.sol",
+  "ast": {
+    "absolutePath": "project:/.coverage_contracts/utils/Context.sol",
+    "exportedSymbols": {
+      "Context": [
+        1442
+      ],
+      "c_0x1c05fbb8": [
+        1392
+      ]
+    },
+    "id": 1443,
+    "license": "MIT",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 1386,
+        "literals": [
+          "solidity",
+          "^",
+          "0.8",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "35:23:5"
+      },
+      {
+        "body": {
+          "id": 1391,
+          "nodeType": "Block",
+          "src": "109:2:5",
+          "statements": []
+        },
+        "id": 1392,
+        "implemented": true,
+        "kind": "freeFunction",
+        "modifiers": [],
+        "name": "c_0x1c05fbb8",
+        "nodeType": "FunctionDefinition",
+        "parameters": {
+          "id": 1389,
+          "nodeType": "ParameterList",
+          "parameters": [
+            {
+              "constant": false,
+              "id": 1388,
+              "mutability": "mutable",
+              "name": "c__0x1c05fbb8",
+              "nodeType": "VariableDeclaration",
+              "scope": 1392,
+              "src": "81:21:5",
+              "stateVariable": false,
+              "storageLocation": "default",
+              "typeDescriptions": {
+                "typeIdentifier": "t_bytes32",
+                "typeString": "bytes32"
+              },
+              "typeName": {
+                "id": 1387,
+                "name": "bytes32",
+                "nodeType": "ElementaryTypeName",
+                "src": "81:7:5",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bytes32",
+                  "typeString": "bytes32"
+                }
+              },
+              "visibility": "internal"
+            }
+          ],
+          "src": "80:23:5"
+        },
+        "returnParameters": {
+          "id": 1390,
+          "nodeType": "ParameterList",
+          "parameters": [],
+          "src": "109:0:5"
+        },
+        "scope": 1443,
+        "src": "59:52:5",
+        "stateMutability": "pure",
+        "virtual": false,
+        "visibility": "internal"
+      },
+      {
+        "abstract": true,
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": {
+          "id": 1393,
+          "nodeType": "StructuredDocumentation",
+          "src": "116:505:5",
+          "text": " @dev Provides information about the current execution context, including the\n sender of the transaction and its data. While these are generally available\n via msg.sender and msg.data, they should not be accessed in such a direct\n manner, since when dealing with meta-transactions the account sending and\n paying for execution may not be the actual sender (as far as an application\n is concerned).\n This contract is only required for intermediate, library-like contracts."
+        },
+        "fullyImplemented": true,
+        "id": 1442,
+        "linearizedBaseContracts": [
+          1442
+        ],
+        "name": "Context",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": {
+              "id": 1398,
+              "nodeType": "Block",
+              "src": "708:2:5",
+              "statements": []
+            },
+            "functionSelector": "369c5f93",
+            "id": 1399,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "c_0xdb6a53a0",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 1396,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1395,
+                  "mutability": "mutable",
+                  "name": "c__0xdb6a53a0",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1399,
+                  "src": "673:21:5",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 1394,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "673:7:5",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "672:23:5"
+            },
+            "returnParameters": {
+              "id": 1397,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "708:0:5"
+            },
+            "scope": 1442,
+            "src": "651:59:5",
+            "stateMutability": "pure",
+            "virtual": false,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 1419,
+              "nodeType": "Block",
+              "src": "779:327:5",
+              "statements": [
+                {
+                  "expression": {
+                    "arguments": [
+                      {
+                        "hexValue": "307838346562643330633135316261363066373564306130653165383534393766653266616331396331366334636531643763613762666636386366393836386336",
+                        "id": 1405,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "number",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "793:66:5",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_rational_60121961667435548527059996699700692214371582916204104497777716850594269391046_by_1",
+                          "typeString": "int_const 6012...(69 digits omitted)...1046"
+                        },
+                        "value": "0x84ebd30c151ba60f75d0a0e1e85497fe2fac19c16c4ce1d7ca7bff68cf9868c6"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_rational_60121961667435548527059996699700692214371582916204104497777716850594269391046_by_1",
+                          "typeString": "int_const 6012...(69 digits omitted)...1046"
+                        }
+                      ],
+                      "id": 1404,
+                      "name": "c_0xdb6a53a0",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 1399,
+                      "src": "780:12:5",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_pure$_t_bytes32_$returns$__$",
+                        "typeString": "function (bytes32) pure"
+                      }
+                    },
+                    "id": 1406,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "780:80:5",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 1407,
+                  "nodeType": "ExpressionStatement",
+                  "src": "780:80:5"
+                },
+                {
+                  "expression": {
+                    "arguments": [
+                      {
+                        "hexValue": "307865356430313364653035656663396134303439336537373761386366636561633533346634643663303932623832343132636661353366366630336666313966",
+                        "id": 1409,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "number",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "893:66:5",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_rational_103947283633955860385945109014755880446528545873385548841788423905212756914591_by_1",
+                          "typeString": "int_const 1039...(70 digits omitted)...4591"
+                        },
+                        "value": "0xe5d013de05efc9a40493e777a8cfceac534f4d6c092b82412cfa53f6f03ff19f"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_rational_103947283633955860385945109014755880446528545873385548841788423905212756914591_by_1",
+                          "typeString": "int_const 1039...(70 digits omitted)...4591"
+                        }
+                      ],
+                      "id": 1408,
+                      "name": "c_0xdb6a53a0",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 1399,
+                      "src": "880:12:5",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_pure$_t_bytes32_$returns$__$",
+                        "typeString": "function (bytes32) pure"
+                      }
+                    },
+                    "id": 1410,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "880:80:5",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 1411,
+                  "nodeType": "ExpressionStatement",
+                  "src": "880:80:5"
+                },
+                {
+                  "expression": {
+                    "arguments": [
+                      {
+                        "hexValue": "307837636261616238313639383062376430353530653065666531633637393635393331363863363531356661343235353161623435363662653030653562306634",
+                        "id": 1413,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "number",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "995:66:5",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_rational_56416610465942975040852458084880471176446644285867815781123808622812338696436_by_1",
+                          "typeString": "int_const 5641...(69 digits omitted)...6436"
+                        },
+                        "value": "0x7cbaab816980b7d0550e0efe1c6796593168c6515fa42551ab4566be00e5b0f4"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_rational_56416610465942975040852458084880471176446644285867815781123808622812338696436_by_1",
+                          "typeString": "int_const 5641...(69 digits omitted)...6436"
+                        }
+                      ],
+                      "id": 1412,
+                      "name": "c_0xdb6a53a0",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 1399,
+                      "src": "982:12:5",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_pure$_t_bytes32_$returns$__$",
+                        "typeString": "function (bytes32) pure"
+                      }
+                    },
+                    "id": 1414,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "982:80:5",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 1415,
+                  "nodeType": "ExpressionStatement",
+                  "src": "982:80:5"
+                },
+                {
+                  "expression": {
+                    "expression": {
+                      "id": 1416,
+                      "name": "msg",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 4294967281,
+                      "src": "1088:3:5",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_magic_message",
+                        "typeString": "msg"
+                      }
+                    },
+                    "id": 1417,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "memberName": "sender",
+                    "nodeType": "MemberAccess",
+                    "src": "1088:10:5",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "functionReturnParameters": 1403,
+                  "id": 1418,
+                  "nodeType": "Return",
+                  "src": "1081:17:5"
+                }
+              ]
+            },
+            "id": 1420,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "_msgSender",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 1400,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "736:2:5"
+            },
+            "returnParameters": {
+              "id": 1403,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1402,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1420,
+                  "src": "770:7:5",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 1401,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "770:7:5",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "769:9:5"
+            },
+            "scope": 1442,
+            "src": "717:389:5",
+            "stateMutability": "view",
+            "virtual": true,
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 1440,
+              "nodeType": "Block",
+              "src": "1181:325:5",
+              "statements": [
+                {
+                  "expression": {
+                    "arguments": [
+                      {
+                        "hexValue": "307861383832373431363334653437353731643334643462363664333137356239653830393036623036396361303736373764366437313433353465333431643761",
+                        "id": 1426,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "number",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "1195:66:5",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_rational_76219049881675219245054770646517489979089677118773945666768182408870012132730_by_1",
+                          "typeString": "int_const 7621...(69 digits omitted)...2730"
+                        },
+                        "value": "0xa882741634e47571d34d4b66d3175b9e80906b069ca07677d6d714354e341d7a"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_rational_76219049881675219245054770646517489979089677118773945666768182408870012132730_by_1",
+                          "typeString": "int_const 7621...(69 digits omitted)...2730"
+                        }
+                      ],
+                      "id": 1425,
+                      "name": "c_0xdb6a53a0",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 1399,
+                      "src": "1182:12:5",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_pure$_t_bytes32_$returns$__$",
+                        "typeString": "function (bytes32) pure"
+                      }
+                    },
+                    "id": 1427,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1182:80:5",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 1428,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1182:80:5"
+                },
+                {
+                  "expression": {
+                    "arguments": [
+                      {
+                        "hexValue": "307838633532616432363164343463613638326533366438336563336339626238336237643263626631643435613137386537613831353834356133323836346634",
+                        "id": 1430,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "number",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "1295:66:5",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_rational_63469875290647445297850060742457690275585591271033329874008511406775825097972_by_1",
+                          "typeString": "int_const 6346...(69 digits omitted)...7972"
+                        },
+                        "value": "0x8c52ad261d44ca682e36d83ec3c9bb83b7d2cbf1d45a178e7a815845a32864f4"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_rational_63469875290647445297850060742457690275585591271033329874008511406775825097972_by_1",
+                          "typeString": "int_const 6346...(69 digits omitted)...7972"
+                        }
+                      ],
+                      "id": 1429,
+                      "name": "c_0xdb6a53a0",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 1399,
+                      "src": "1282:12:5",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_pure$_t_bytes32_$returns$__$",
+                        "typeString": "function (bytes32) pure"
+                      }
+                    },
+                    "id": 1431,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1282:80:5",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 1432,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1282:80:5"
+                },
+                {
+                  "expression": {
+                    "arguments": [
+                      {
+                        "hexValue": "307838313738663732646333626162646433303664613137623038316234616536623733353534656464623335383565386264373862373765666562643866653335",
+                        "id": 1434,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "number",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "1397:66:5",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_rational_58562085080172745383954026799096733673614044034801051925995612608405815492149_by_1",
+                          "typeString": "int_const 5856...(69 digits omitted)...2149"
+                        },
+                        "value": "0x8178f72dc3babdd306da17b081b4ae6b73554eddb3585e8bd78b77efebd8fe35"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_rational_58562085080172745383954026799096733673614044034801051925995612608405815492149_by_1",
+                          "typeString": "int_const 5856...(69 digits omitted)...2149"
+                        }
+                      ],
+                      "id": 1433,
+                      "name": "c_0xdb6a53a0",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 1399,
+                      "src": "1384:12:5",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_pure$_t_bytes32_$returns$__$",
+                        "typeString": "function (bytes32) pure"
+                      }
+                    },
+                    "id": 1435,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1384:80:5",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 1436,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1384:80:5"
+                },
+                {
+                  "expression": {
+                    "expression": {
+                      "id": 1437,
+                      "name": "msg",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 4294967281,
+                      "src": "1490:3:5",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_magic_message",
+                        "typeString": "msg"
+                      }
+                    },
+                    "id": 1438,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "memberName": "data",
+                    "nodeType": "MemberAccess",
+                    "src": "1490:8:5",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_calldata_ptr",
+                      "typeString": "bytes calldata"
+                    }
+                  },
+                  "functionReturnParameters": 1424,
+                  "id": 1439,
+                  "nodeType": "Return",
+                  "src": "1483:15:5"
+                }
+              ]
+            },
+            "id": 1441,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "_msgData",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 1421,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1131:2:5"
+            },
+            "returnParameters": {
+              "id": 1424,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1423,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1441,
+                  "src": "1165:14:5",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_calldata_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 1422,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1165:5:5",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1164:16:5"
+            },
+            "scope": 1442,
+            "src": "1114:392:5",
+            "stateMutability": "view",
+            "virtual": true,
+            "visibility": "internal"
+          }
+        ],
+        "scope": 1443,
+        "src": "623:886:5"
+      }
+    ],
+    "src": "35:1476:5"
+  },
+  "legacyAST": {
+    "absolutePath": "project:/.coverage_contracts/utils/Context.sol",
+    "exportedSymbols": {
+      "Context": [
+        1442
+      ],
+      "c_0x1c05fbb8": [
+        1392
+      ]
+    },
+    "id": 1443,
+    "license": "MIT",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 1386,
+        "literals": [
+          "solidity",
+          "^",
+          "0.8",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "35:23:5"
+      },
+      {
+        "body": {
+          "id": 1391,
+          "nodeType": "Block",
+          "src": "109:2:5",
+          "statements": []
+        },
+        "id": 1392,
+        "implemented": true,
+        "kind": "freeFunction",
+        "modifiers": [],
+        "name": "c_0x1c05fbb8",
+        "nodeType": "FunctionDefinition",
+        "parameters": {
+          "id": 1389,
+          "nodeType": "ParameterList",
+          "parameters": [
+            {
+              "constant": false,
+              "id": 1388,
+              "mutability": "mutable",
+              "name": "c__0x1c05fbb8",
+              "nodeType": "VariableDeclaration",
+              "scope": 1392,
+              "src": "81:21:5",
+              "stateVariable": false,
+              "storageLocation": "default",
+              "typeDescriptions": {
+                "typeIdentifier": "t_bytes32",
+                "typeString": "bytes32"
+              },
+              "typeName": {
+                "id": 1387,
+                "name": "bytes32",
+                "nodeType": "ElementaryTypeName",
+                "src": "81:7:5",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bytes32",
+                  "typeString": "bytes32"
+                }
+              },
+              "visibility": "internal"
+            }
+          ],
+          "src": "80:23:5"
+        },
+        "returnParameters": {
+          "id": 1390,
+          "nodeType": "ParameterList",
+          "parameters": [],
+          "src": "109:0:5"
+        },
+        "scope": 1443,
+        "src": "59:52:5",
+        "stateMutability": "pure",
+        "virtual": false,
+        "visibility": "internal"
+      },
+      {
+        "abstract": true,
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": {
+          "id": 1393,
+          "nodeType": "StructuredDocumentation",
+          "src": "116:505:5",
+          "text": " @dev Provides information about the current execution context, including the\n sender of the transaction and its data. While these are generally available\n via msg.sender and msg.data, they should not be accessed in such a direct\n manner, since when dealing with meta-transactions the account sending and\n paying for execution may not be the actual sender (as far as an application\n is concerned).\n This contract is only required for intermediate, library-like contracts."
+        },
+        "fullyImplemented": true,
+        "id": 1442,
+        "linearizedBaseContracts": [
+          1442
+        ],
+        "name": "Context",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": {
+              "id": 1398,
+              "nodeType": "Block",
+              "src": "708:2:5",
+              "statements": []
+            },
+            "functionSelector": "369c5f93",
+            "id": 1399,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "c_0xdb6a53a0",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 1396,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1395,
+                  "mutability": "mutable",
+                  "name": "c__0xdb6a53a0",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1399,
+                  "src": "673:21:5",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 1394,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "673:7:5",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "672:23:5"
+            },
+            "returnParameters": {
+              "id": 1397,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "708:0:5"
+            },
+            "scope": 1442,
+            "src": "651:59:5",
+            "stateMutability": "pure",
+            "virtual": false,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 1419,
+              "nodeType": "Block",
+              "src": "779:327:5",
+              "statements": [
+                {
+                  "expression": {
+                    "arguments": [
+                      {
+                        "hexValue": "307838346562643330633135316261363066373564306130653165383534393766653266616331396331366334636531643763613762666636386366393836386336",
+                        "id": 1405,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "number",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "793:66:5",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_rational_60121961667435548527059996699700692214371582916204104497777716850594269391046_by_1",
+                          "typeString": "int_const 6012...(69 digits omitted)...1046"
+                        },
+                        "value": "0x84ebd30c151ba60f75d0a0e1e85497fe2fac19c16c4ce1d7ca7bff68cf9868c6"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_rational_60121961667435548527059996699700692214371582916204104497777716850594269391046_by_1",
+                          "typeString": "int_const 6012...(69 digits omitted)...1046"
+                        }
+                      ],
+                      "id": 1404,
+                      "name": "c_0xdb6a53a0",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 1399,
+                      "src": "780:12:5",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_pure$_t_bytes32_$returns$__$",
+                        "typeString": "function (bytes32) pure"
+                      }
+                    },
+                    "id": 1406,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "780:80:5",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 1407,
+                  "nodeType": "ExpressionStatement",
+                  "src": "780:80:5"
+                },
+                {
+                  "expression": {
+                    "arguments": [
+                      {
+                        "hexValue": "307865356430313364653035656663396134303439336537373761386366636561633533346634643663303932623832343132636661353366366630336666313966",
+                        "id": 1409,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "number",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "893:66:5",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_rational_103947283633955860385945109014755880446528545873385548841788423905212756914591_by_1",
+                          "typeString": "int_const 1039...(70 digits omitted)...4591"
+                        },
+                        "value": "0xe5d013de05efc9a40493e777a8cfceac534f4d6c092b82412cfa53f6f03ff19f"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_rational_103947283633955860385945109014755880446528545873385548841788423905212756914591_by_1",
+                          "typeString": "int_const 1039...(70 digits omitted)...4591"
+                        }
+                      ],
+                      "id": 1408,
+                      "name": "c_0xdb6a53a0",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 1399,
+                      "src": "880:12:5",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_pure$_t_bytes32_$returns$__$",
+                        "typeString": "function (bytes32) pure"
+                      }
+                    },
+                    "id": 1410,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "880:80:5",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 1411,
+                  "nodeType": "ExpressionStatement",
+                  "src": "880:80:5"
+                },
+                {
+                  "expression": {
+                    "arguments": [
+                      {
+                        "hexValue": "307837636261616238313639383062376430353530653065666531633637393635393331363863363531356661343235353161623435363662653030653562306634",
+                        "id": 1413,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "number",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "995:66:5",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_rational_56416610465942975040852458084880471176446644285867815781123808622812338696436_by_1",
+                          "typeString": "int_const 5641...(69 digits omitted)...6436"
+                        },
+                        "value": "0x7cbaab816980b7d0550e0efe1c6796593168c6515fa42551ab4566be00e5b0f4"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_rational_56416610465942975040852458084880471176446644285867815781123808622812338696436_by_1",
+                          "typeString": "int_const 5641...(69 digits omitted)...6436"
+                        }
+                      ],
+                      "id": 1412,
+                      "name": "c_0xdb6a53a0",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 1399,
+                      "src": "982:12:5",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_pure$_t_bytes32_$returns$__$",
+                        "typeString": "function (bytes32) pure"
+                      }
+                    },
+                    "id": 1414,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "982:80:5",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 1415,
+                  "nodeType": "ExpressionStatement",
+                  "src": "982:80:5"
+                },
+                {
+                  "expression": {
+                    "expression": {
+                      "id": 1416,
+                      "name": "msg",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 4294967281,
+                      "src": "1088:3:5",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_magic_message",
+                        "typeString": "msg"
+                      }
+                    },
+                    "id": 1417,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "memberName": "sender",
+                    "nodeType": "MemberAccess",
+                    "src": "1088:10:5",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "functionReturnParameters": 1403,
+                  "id": 1418,
+                  "nodeType": "Return",
+                  "src": "1081:17:5"
+                }
+              ]
+            },
+            "id": 1420,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "_msgSender",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 1400,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "736:2:5"
+            },
+            "returnParameters": {
+              "id": 1403,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1402,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1420,
+                  "src": "770:7:5",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 1401,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "770:7:5",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "769:9:5"
+            },
+            "scope": 1442,
+            "src": "717:389:5",
+            "stateMutability": "view",
+            "virtual": true,
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 1440,
+              "nodeType": "Block",
+              "src": "1181:325:5",
+              "statements": [
+                {
+                  "expression": {
+                    "arguments": [
+                      {
+                        "hexValue": "307861383832373431363334653437353731643334643462363664333137356239653830393036623036396361303736373764366437313433353465333431643761",
+                        "id": 1426,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "number",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "1195:66:5",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_rational_76219049881675219245054770646517489979089677118773945666768182408870012132730_by_1",
+                          "typeString": "int_const 7621...(69 digits omitted)...2730"
+                        },
+                        "value": "0xa882741634e47571d34d4b66d3175b9e80906b069ca07677d6d714354e341d7a"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_rational_76219049881675219245054770646517489979089677118773945666768182408870012132730_by_1",
+                          "typeString": "int_const 7621...(69 digits omitted)...2730"
+                        }
+                      ],
+                      "id": 1425,
+                      "name": "c_0xdb6a53a0",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 1399,
+                      "src": "1182:12:5",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_pure$_t_bytes32_$returns$__$",
+                        "typeString": "function (bytes32) pure"
+                      }
+                    },
+                    "id": 1427,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1182:80:5",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 1428,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1182:80:5"
+                },
+                {
+                  "expression": {
+                    "arguments": [
+                      {
+                        "hexValue": "307838633532616432363164343463613638326533366438336563336339626238336237643263626631643435613137386537613831353834356133323836346634",
+                        "id": 1430,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "number",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "1295:66:5",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_rational_63469875290647445297850060742457690275585591271033329874008511406775825097972_by_1",
+                          "typeString": "int_const 6346...(69 digits omitted)...7972"
+                        },
+                        "value": "0x8c52ad261d44ca682e36d83ec3c9bb83b7d2cbf1d45a178e7a815845a32864f4"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_rational_63469875290647445297850060742457690275585591271033329874008511406775825097972_by_1",
+                          "typeString": "int_const 6346...(69 digits omitted)...7972"
+                        }
+                      ],
+                      "id": 1429,
+                      "name": "c_0xdb6a53a0",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 1399,
+                      "src": "1282:12:5",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_pure$_t_bytes32_$returns$__$",
+                        "typeString": "function (bytes32) pure"
+                      }
+                    },
+                    "id": 1431,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1282:80:5",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 1432,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1282:80:5"
+                },
+                {
+                  "expression": {
+                    "arguments": [
+                      {
+                        "hexValue": "307838313738663732646333626162646433303664613137623038316234616536623733353534656464623335383565386264373862373765666562643866653335",
+                        "id": 1434,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "number",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "1397:66:5",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_rational_58562085080172745383954026799096733673614044034801051925995612608405815492149_by_1",
+                          "typeString": "int_const 5856...(69 digits omitted)...2149"
+                        },
+                        "value": "0x8178f72dc3babdd306da17b081b4ae6b73554eddb3585e8bd78b77efebd8fe35"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_rational_58562085080172745383954026799096733673614044034801051925995612608405815492149_by_1",
+                          "typeString": "int_const 5856...(69 digits omitted)...2149"
+                        }
+                      ],
+                      "id": 1433,
+                      "name": "c_0xdb6a53a0",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 1399,
+                      "src": "1384:12:5",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_pure$_t_bytes32_$returns$__$",
+                        "typeString": "function (bytes32) pure"
+                      }
+                    },
+                    "id": 1435,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1384:80:5",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 1436,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1384:80:5"
+                },
+                {
+                  "expression": {
+                    "expression": {
+                      "id": 1437,
+                      "name": "msg",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 4294967281,
+                      "src": "1490:3:5",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_magic_message",
+                        "typeString": "msg"
+                      }
+                    },
+                    "id": 1438,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "memberName": "data",
+                    "nodeType": "MemberAccess",
+                    "src": "1490:8:5",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_calldata_ptr",
+                      "typeString": "bytes calldata"
+                    }
+                  },
+                  "functionReturnParameters": 1424,
+                  "id": 1439,
+                  "nodeType": "Return",
+                  "src": "1483:15:5"
+                }
+              ]
+            },
+            "id": 1441,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "_msgData",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 1421,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1131:2:5"
+            },
+            "returnParameters": {
+              "id": 1424,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1423,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1441,
+                  "src": "1165:14:5",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_calldata_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 1422,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1165:5:5",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1164:16:5"
+            },
+            "scope": 1442,
+            "src": "1114:392:5",
+            "stateMutability": "view",
+            "virtual": true,
+            "visibility": "internal"
+          }
+        ],
+        "scope": 1443,
+        "src": "623:886:5"
+      }
+    ],
+    "src": "35:1476:5"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.8.0+commit.c7dfd78e.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.4.2",
+  "updatedAt": "2021-08-16T22:31:05.480Z",
+  "devdoc": {
+    "details": "Provides information about the current execution context, including the sender of the transaction and its data. While these are generally available via msg.sender and msg.data, they should not be accessed in such a direct manner, since when dealing with meta-transactions the account sending and paying for execution may not be the actual sender (as far as an application is concerned). This contract is only required for intermediate, library-like contracts.",
+    "kind": "dev",
+    "methods": {},
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  }
+}
