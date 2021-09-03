@@ -22,6 +22,7 @@
  require('dotenv').config();
  const privateKey = process.env.PRIVATE_KEY;
  const infuraUrl = process.env.INFURA_URL;
+ const infuraMainnetUrl = process.env.INFURA_MAINNET_URL;
  const etherscanAPI = process.env.ETHERSCAN_API_KEY;
 //
 // const fs = require('fs');
@@ -50,6 +51,16 @@ module.exports = {
       port: 8545,            // Standard Ethereum port (default: none)
       network_id: "*",       // Any network (default: none)
       gas: 6021975,
+     },
+     mainnet: {
+      provider: () => new HDWalletProvider(privateKey, infuraMainnetUrl),
+      network_id: 1,       // Rinkeby's id
+      gas: 5500000,        // Rinkeby has a lower block limit than mainnet
+      confirmations: 2,    // # of confs to wait between deployments. (default: 0)
+      timeoutBlocks: 200,  // # of blocks before a deployment times out  (minimum/default: 50)
+      networkCheckTimeout: 10000000,
+      skipDryRun: true,     // Skip dry run before migrations? (default: false for public nets )
+      websocket: true
      },
     // Another network with more advanced options...
     // advanced: {
@@ -90,13 +101,13 @@ module.exports = {
     solc: {
        version: "0.8.0",    // Fetch exact version from solc-bin (default: truffle's version)
       // docker: true,        // Use "0.5.1" you've installed locally with docker (default: false)
-      // settings: {          // See the solidity docs for advice about optimization and evmVersion
-      //  optimizer: {
-      //    enabled: false,
-      //    runs: 200
-      //  },
+       settings: {          // See the solidity docs for advice about optimization and evmVersion
+        optimizer: {
+          enabled: true,
+          runs: 200
+        },
       //  evmVersion: "byzantium"
-      // }
+       }
     }
   },
 
