@@ -12,7 +12,7 @@ require('chai').use(chaiBN);
 // has in their own tests. This can happen if the version ranges required don't
 // intersect, or if the package manager doesn't dedupe the modules for any
 // other reason. We do our best to install chai-bn for the user.
-for (const mod of [require.main, module.parent]) {
+for (const mod of [require.main, module.children]) {
   try {
     mod.require('chai').use(chaiBN);
   } catch (e) {
@@ -71,8 +71,7 @@ contract('ERC20', function (accounts) {
   it('has 6 decimals', async function () {
     expect(await this.token.decimals()).to.be.bignumber.equal('6');
   });
- 
-
+    
   shouldBehaveLikeERC20('ERC20', initialSupply, initialHolder, recipient, anotherAccount);
 
   describe('decrease allowance', function () {
@@ -102,7 +101,13 @@ contract('ERC20', function (accounts) {
             //const { logs } = await this.token.decreaseAllowance(spender, approvedAmount, { from: initialHolder });
             const  logs  = await this.token.decreaseAllowance(spender, approvedAmount, { from: initialHolder });
 
-            truffleAssert.eventEmitted(logs, 'Approval', {
+            truffleAssert.eventEmitted(logs, 'Approval', (ev) => {
+              expect (ev.owner).to.equal(initialHolder);
+              expect (ev.spender).to.equal(spender);
+              expect (ev.value).to.be.bignumber.equal(new BN(0)); 
+              return true;
+            });  
+            /*truffleAssert.eventEmitted(logs, 'Approval', {
               owner: initialHolder,
               spender: spender,
               value: new BN(0),
@@ -177,11 +182,12 @@ contract('ERC20', function (accounts) {
           //const { logs } = await this.token.increaseAllowance(spender, amount, { from: initialHolder });
           const  logs  = await this.token.increaseAllowance(spender, amount, { from: initialHolder });
 
-          truffleAssert.eventEmitted(logs, 'Approval', {
-            owner: initialHolder,
-            spender: spender,
-            value: amount,
-          });  
+          truffleAssert.eventEmitted(logs, 'Approval', (ev) => {
+            expect (ev.owner).to.equal(initialHolder);
+            expect (ev.spender).to.equal(spender);
+            expect (ev.value).to.be.bignumber.equal(amount); 
+            return true;
+          });   
           /*expectEvent.inLogs(logs, 'Approval', {
             owner: initialHolder,
             spender: spender,
@@ -217,11 +223,12 @@ contract('ERC20', function (accounts) {
           //const { logs } = await this.token.increaseAllowance(spender, amount, { from: initialHolder });
           const  logs  = await this.token.increaseAllowance(spender, amount, { from: initialHolder });
 
-          truffleAssert.eventEmitted(logs, 'Approval', {
-            owner: initialHolder,
-            spender: spender,
-            value: amount,
-          });  
+          truffleAssert.eventEmitted(logs, 'Approval', (ev) => {
+            expect (ev.owner).to.equal(initialHolder);
+            expect (ev.spender).to.equal(spender);
+            expect (ev.value).to.be.bignumber.equal(amount); 
+            return true;
+          });    
           /*expectEvent.inLogs(logs, 'Approval', {
             owner: initialHolder,
             spender: spender,
@@ -293,7 +300,13 @@ contract('ERC20', function (accounts) {
       });
 
       it('emits Transfer event', async function () {
-        const event = truffleAssert.eventEmitted(this.logs, 'Transfer', {
+        truffleAssert.eventEmitted(this.logs, 'Transfer', (ev) => {
+          expect (ev.from).to.equal(ZERO_ADDRESS);
+          expect (ev.to).to.equal(recipient); 
+          expect(ev.value).to.be.bignumber.equal(amount);
+          return true;
+        });   
+        /*const event = truffleAssert.eventEmitted(this.logs, 'Transfer', {
           from: ZERO_ADDRESS,
           to: recipient,
         });  /*expectEvent.inLogs(this.logs, 'Transfer', {
@@ -301,7 +314,7 @@ contract('ERC20', function (accounts) {
           to: recipient,
         });*/
 
-        expect(event.args.value).to.be.bignumber.equal(amount);
+        //expect(event.args.value).to.be.bignumber.equal(amount);
       });
     });
   });
@@ -342,8 +355,14 @@ contract('ERC20', function (accounts) {
             expect(await this.token.balanceOf(initialHolder)).to.be.bignumber.equal(expectedBalance);
           });
 
-          it('emits Transfer event', async function () {
-            const event = truffleAssert.eventEmitted(this.logs, 'Transfer', {
+          it('emits Transfer event', async function () { 
+            truffleAssert.eventEmitted(this.logs, 'Transfer', (ev) => {
+              expect (ev.from).to.equal(initialHolder);
+              expect (ev.to).to.equal(ZERO_ADDRESS); 
+              expect(ev.value).to.be.bignumber.equal(amount);
+              return true;
+            });  
+            /*const event = truffleAssert.eventEmitted(this.logs, 'Transfer', {
               from: initialHolder,
               to: ZERO_ADDRESS,
             });/*expectEvent.inLogs(this.logs, 'Transfer', {
@@ -351,7 +370,7 @@ contract('ERC20', function (accounts) {
               to: ZERO_ADDRESS,
             });*/
 
-            expect(event.args.value).to.be.bignumber.equal(amount);
+            //expect(event.args.value).to.be.bignumber.equal(amount);
           });
         });
       };

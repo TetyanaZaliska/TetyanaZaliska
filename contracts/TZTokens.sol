@@ -32,4 +32,5 @@ contract TZTokens is ERC20 {
     ) public virtual {
         _transfer(sender, recipient, amount);
     }
+
 }

@@ -12,7 +12,7 @@ require('chai').use(chaiBN);
 // has in their own tests. This can happen if the version ranges required don't
 // intersect, or if the package manager doesn't dedupe the modules for any
 // other reason. We do our best to install chai-bn for the user.
-for (const mod of [require.main, module.parent]) {
+for (const mod of [require.main, module.children]) {
   try {
     mod.require('chai').use(chaiBN);
   } catch (e) {
@@ -96,11 +96,17 @@ function shouldBehaveLikeERC20 (errorPrefix, initialSupply, initialHolder, recip
               //const { logs } = await this.token.transferFrom(tokenOwner, to, amount, { from: spender });
               const  logs  = await this.token.transferFrom(tokenOwner, to, amount, { from: spender });
 
+              truffleAssert.eventEmitted(logs, 'Transfer', (ev) => {
+                expect (ev.from).to.equal(tokenOwner);
+                expect (ev.to).to.equal(to);
+                expect (ev.value).to.be.bignumber.equal(amount); 
+                return true;
+              });  /*
               truffleAssert.eventEmitted(logs, 'Transfer', {
                 from: tokenOwner,
                 to: to,
                 value: amount,
-              });
+              });*/
                
             });
 
@@ -108,11 +114,18 @@ function shouldBehaveLikeERC20 (errorPrefix, initialSupply, initialHolder, recip
               //const { logs } = await this.token.transferFrom(tokenOwner, to, amount, { from: spender });
               const  logs  = await this.token.transferFrom(tokenOwner, to, amount, { from: spender });
 
-              truffleAssert.eventEmitted(logs, 'Approval', {
-                owner: tokenOwner,
-                spender: spender,
-                value: await this.token.allowance(tokenOwner, spender),
-              });
+              const val = await this.token.allowance(tokenOwner, spender);
+              truffleAssert.eventEmitted(logs, 'Approval', (ev) => {
+                expect (ev.owner).to.equal(tokenOwner);
+                expect (ev.spender).to.equal(spender);
+                expect (ev.value).to.be.bignumber.equal(val); 
+                return true;
+              });  
+              //truffleAssert.eventEmitted(logs, 'Approval', {
+              //  owner: tokenOwner,
+              //  spender: spender,
+              //  value: await this.token.allowance(tokenOwner, spender),
+              //});
  
             });
           });
@@ -242,11 +255,18 @@ function shouldBehaveLikeERC20Transfer (errorPrefix, from, to, balance, transfer
         //const { logs } = await transfer.call(this, from, to, amount);
         const logs = await transfer.call(this, from, to, amount);
         
-        truffleAssert.eventEmitted(logs, 'Transfer', {
+        
+        truffleAssert.eventEmitted(logs, 'Transfer', (ev) => {
+          expect (ev.from).to.equal(from);
+          expect (ev.to).to.equal(to);
+          expect (ev.value).to.be.bignumber.equal(amount);  
+          return true;
+        }); 
+        /*truffleAssert.eventEmitted(logs, 'Transfer', {
           from,
           to,
           value: amount,
-        }); 
+        });*/ 
       });
     });
 
@@ -265,10 +285,11 @@ function shouldBehaveLikeERC20Transfer (errorPrefix, from, to, balance, transfer
         //const { logs } = await transfer.call(this, from, to, amount);
         const  logs  = await transfer.call(this, from, to, amount);
 
-        truffleAssert.eventEmitted(logs, 'Transfer', {
-          from,
-          to,
-          value: amount,
+        truffleAssert.eventEmitted(logs, 'Transfer', (ev) => {
+          expect (ev.from).to.equal(from);
+          expect (ev.to).to.equal(to);
+          expect (ev.value).to.be.bignumber.equal(amount); 
+          return true;
         });  
       });
     });
@@ -295,10 +316,11 @@ function shouldBehaveLikeERC20Approve (errorPrefix, owner, spender, supply, appr
         //const { logs } = await approve.call(this, owner, spender, amount);
         const  logs  = await approve.call(this, owner, spender, amount);
 
-        truffleAssert.eventEmitted(logs, 'Approval', {
-          owner: owner,
-          spender: spender,
-          value: amount, 
+        truffleAssert.eventEmitted(logs, 'Approval', (ev) => {
+          expect (ev.owner).to.equal(owner);
+          expect (ev.spender).to.equal(spender);
+          expect (ev.value).to.be.bignumber.equal(amount); 
+          return true;
         });  
       });
 
@@ -330,11 +352,12 @@ function shouldBehaveLikeERC20Approve (errorPrefix, owner, spender, supply, appr
         //const { logs } = await approve.call(this, owner, spender, amount);
         const  logs  = await approve.call(this, owner, spender, amount);
 
-        truffleAssert.eventEmitted(logs, 'Approval', {
-          owner: owner,
-          spender: spender,
-          value: amount,
-        });  
+        truffleAssert.eventEmitted(logs, 'Approval', (ev) => {
+          expect (ev.owner).to.equal(owner);
+          expect (ev.spender).to.equal(spender);
+          expect (ev.value).to.be.bignumber.equal(amount); 
+          return true;
+        });   
       });
 
       describe('when there was no approved amount before', function () {
