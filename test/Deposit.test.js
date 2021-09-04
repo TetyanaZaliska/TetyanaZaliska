@@ -26,7 +26,7 @@ const { expect } = require('chai');
 const TZTokens = artifacts.require('TZTokens');
 const Deposit = artifacts.require('Deposit');
 
-contract('ERC20', function (accounts) {
+contract('Deposit', function (accounts) {
   const [ initialHolder, recipient, anotherAccount ] = accounts;
 
   const name = 'TZTokens';
@@ -41,9 +41,29 @@ contract('ERC20', function (accounts) {
   
   
 
-  describe('get Balance Eth', function () {
-    it('when balance is zero', async function () {
-        expect(await this.deposit.getBalanceEth(anotherAccount)).to.equal(new BN(0));
+  describe('deposit Eth', function () {
+    it('when the spender is the zero address', async function () { 
+      it('reverts', async function () {
+        await truffleAssert.reverts(this.deposit.getBalanceEth(), 
+          'Deposit: transfer from the zero address',
+        ); 
+      }); 
     });
+    
+    it('when the amount is negative number', async function () {
+        const amount = new BN(-1);
+        const sender = ZERO_ADDRESS;
+        this.Deposit._owner = ZERO_ADDRESS;
+        
+        it('reverts', async function () {
+          await truffleAssert.reverts(this.deposit.getBalanceEth(), 
+            'Deposit: deposit amount has to be positive s',
+          ); 
+        }); 
+      });
+
+    //it('should deposit Eth', async function () {
+    //    expect(await this.deposit.getBalanceEth(anotherAccount)).to.equal(new BN(0));
+    //});
   });
 });
